@@ -27,7 +27,7 @@
 <?php
 
 $NAME = "monupco-openshift-php";
-$VERSION = "0.1";
+$VERSION = "0.2";
 
 # Dependencies:
 #
