@@ -37,7 +37,9 @@ Installing on your OpenShift PHP application
 
 - If everything goes well you should see something like:
 
-        19:55:13 [www.0] Monupco: Success, registered/updated application with id 35
+        remote: Running .openshift/action_hooks/post_deploy
+        remote: 
+        remote: Success, registered/updated application with id 41
 
 - That's it, you can now check your application statistics at <http://monupco.com>
 
