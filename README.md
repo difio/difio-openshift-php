@@ -27,13 +27,13 @@ Installing on your OpenShift PHP application
 
 - Download the registration script into your application
 
-        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -O .openshift/action_hooks/
+        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -P .openshift/action_hooks/
+        chmod +x .openshift/action_hooks/monupco-openshift.php
 
 - Enable the registration script in `.openshift/action_hooks/post_deploy`
 
         #!/bin/sh
-        source $OPENSHIFT_REPO_DIR/data/MONUPCO_SETTINGS
-        ./monupco-openshift.php
+        $OPENSHIFT_REPO_DIR/.openshift/action_hooks/monupco-openshift.php
 
 - Commit and push your application to OpenShift
 
