@@ -40,3 +40,12 @@ Installing on your OpenShift PHP application
         19:55:13 [www.0] Monupco: Success, registered/updated application with id 35
 
 - That's it, you can now check your application statistics at <http://monupco.com>
+
+Updating the registration agent
+-------------------------------
+
+- When a new version of the registration agent script is available simply overwrite your current one
+
+        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -O .openshift/action_hooks/monupco-openshift.php
+        chmod +x .openshift/action_hooks/monupco-openshift.php
+        git add . && git commit -m "updated to latest version of monupco-openshift-php" && git push
