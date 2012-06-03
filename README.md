@@ -20,14 +20,13 @@ Installing on your OpenShift PHP application
         echo PEAR >> deplist.txt
         echo pecl/json >> deplist.txt
 
-- Set your userID in the `./data/MONUPCO_SETTINGS` file
+- Set your userID in the `.openshift/action_hooks/pre_start_php-5.3` file
 
-        echo "export MONUPCO_USER_ID=YourUserID"  > ./data/MONUPCO_SETTINGS
+        echo "export MONUPCO_USER_ID=YourUserID"  > .openshift/action_hooks/pre_start_php-5.3
 
 - Download the registration script into your application
 
         wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -O .openshift/action_hooks/
-
 
 - Enable the registration script in `.openshift/action_hooks/post_deploy`
 
