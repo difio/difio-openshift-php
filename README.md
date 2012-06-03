@@ -27,7 +27,7 @@ Installing on your OpenShift PHP application
 
 - Download the registration script into your application
 
-        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -P .openshift/action_hooks/
+        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -O .openshift/action_hooks/monupco-openshift.php
         chmod +x .openshift/action_hooks/monupco-openshift.php
 
 - Enable the registration script in `.openshift/action_hooks/post_deploy`
