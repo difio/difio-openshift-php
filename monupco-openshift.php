@@ -27,17 +27,19 @@
 ************************************************************************************/
 
 $NAME = "monupco-openshift-php";
-$VERSION = "0.3;
+$VERSION = "0.4;
 
-# Dependencies:
-#
-# HTTP_Request2
-# PEAR
-# pecl/json
+/****
+ Dependencies:
 
-# Bugs:
-# https://bugzilla.redhat.com/show_bug.cgi?id=803467#c4 - pecl/json package is not listed
-# https://bugzilla.redhat.com/show_bug.cgi?id=827575 - Not able to use external PEAR channels
+ HTTP_Request2
+ PEAR
+ pecl/json
+
+ Bugs:
+ https://bugzilla.redhat.com/show_bug.cgi?id=803467#c4 - pecl/json package is not listed
+ https://bugzilla.redhat.com/show_bug.cgi?id=827575 - Not able to use external PEAR channels
+****/
 
 function startsWith($haystack,$needle) {
    return strpos($haystack, $needle, 0) === 0;
