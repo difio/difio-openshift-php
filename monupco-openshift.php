@@ -27,7 +27,7 @@
 ************************************************************************************/
 
 $NAME = "monupco-openshift-php";
-$VERSION = "0.4;
+$VERSION = "0.5;
 
 /****
  Dependencies:
@@ -45,7 +45,7 @@ function startsWith($haystack,$needle) {
    return strpos($haystack, $needle, 0) === 0;
 }
 
-set_include_path(get_include_path() . PATH_SEPARATOR . getenv('OPENSHIFT_GEAR_DIR')."phplib/pear/pear/php");
+set_include_path(get_include_path().":".getenv('OPENSHIFT_GEAR_DIR')."phplib/pear/pear/php");
 
 require_once 'PEAR/Registry.php';
 require_once 'HTTP/Request2.php';
