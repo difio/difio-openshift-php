@@ -26,8 +26,8 @@
 *
 ************************************************************************************/
 
-$NAME = "monupco-openshift-php";
-$VERSION = "0.7";
+$NAME = "difio-openshift-php";
+$VERSION = "2.0";
 
 /****
  Dependencies:
@@ -51,7 +51,7 @@ require_once 'PEAR/Registry.php';
 require_once 'HTTP/Request2.php';
 
 $data = array(
-    'user_id'    => intval(getenv('MONUPCO_USER_ID')),
+    'user_id'    => intval(getenv('DIFIO_USER_ID')),
     'app_name'   => getenv('OPENSHIFT_GEAR_NAME'),
     'app_uuid'   => getenv('OPENSHIFT_GEAR_UUID'),
     'app_type'   => getenv('OPENSHIFT_GEAR_TYPE'),
@@ -68,11 +68,11 @@ foreach ($registry->packageInfo(null, null) as $package) {
 
 // Add self as installed so that user is able to see when new version is available
 // this is of type 2000 - package released on GitHub which has tags
-$data['installed'][] = array('n' => 'monupco/'.$NAME, 'v' => $VERSION, 't' => 2000);
+$data['installed'][] = array('n' => 'difio/'.$NAME, 'v' => $VERSION, 't' => 2000);
 
 $json_data = json_encode($data);
 
-$request = new HTTP_Request2('https://monupco-otb.rhcloud.com/application/register/');
+$request = new HTTP_Request2('https://difio-otb.rhcloud.com/application/register/');
 $request->setMethod(HTTP_Request2::METHOD_POST);
 $request->setHeader('User-agent', sprintf('%s/%s', $NAME, $VERSION));
 $request->addPostParameter('json_data', $json_data);

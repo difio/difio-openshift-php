@@ -1,13 +1,13 @@
-Registration agent for monupco.com, preconfigured for OpenShift / PHP
+Registration agent for Difio, preconfigured for OpenShift / PHP
 applications. 
 
-It compiles a list of installed PEAR packages and sends it to monupco.com.
+It compiles a list of installed PEAR packages and sends it to http://www.dif.io.
 
 
 Installing on your OpenShift PHP application
 --------------------------------------------
 
-- Create an account at http://monupco.com
+- Create an account at http://www.dif.io
 
 - Create your PHP application in OpenShift
 
@@ -22,18 +22,18 @@ Installing on your OpenShift PHP application
 
 - Download the registration script into your application
 
-        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -O .openshift/action_hooks/monupco-openshift.php
-        chmod +x .openshift/action_hooks/monupco-openshift.php
+        wget https://raw.github.com/difio/difio-openshift-php/master/difio-openshift.php -O .openshift/action_hooks/difio-openshift.php
+        chmod +x .openshift/action_hooks/difio-openshift.php
 
 - Enable the registration script in `.openshift/action_hooks/post_deploy` and set your userID
 
         #!/bin/sh
-        export MONUPCO_USER_ID=YourUserID
-        $OPENSHIFT_REPO_DIR/.openshift/action_hooks/monupco-openshift.php
+        export DIFIO_USER_ID=YourUserID
+        $OPENSHIFT_REPO_DIR/.openshift/action_hooks/difio-openshift.php
 
 - Commit and push your application to OpenShift
 
-        git add . && git commit -m "enable monupco registration" && git push
+        git add . && git commit -m "enable Difio registration" && git push
 
 - If everything goes well you should see something like:
 
@@ -41,13 +41,13 @@ Installing on your OpenShift PHP application
         remote: 
         remote: Success, registered/updated application with id 41
 
-- That's it, you can now check your application statistics at <http://monupco.com>
+- That's it, you can now check your application statistics at http://www.dif.io
 
 Updating the registration agent
 -------------------------------
 
 - When a new version of the registration agent script is available simply overwrite your current one
 
-        wget https://raw.github.com/monupco/monupco-openshift-php/master/monupco-openshift.php -O .openshift/action_hooks/monupco-openshift.php
-        chmod +x .openshift/action_hooks/monupco-openshift.php
-        git add . && git commit -m "updated to latest version of monupco-openshift-php" && git push
+        wget https://raw.github.com/difio/difio-openshift-php/master/difio-openshift.php -O .openshift/action_hooks/difio-openshift.php
+        chmod +x .openshift/action_hooks/difio-openshift.php
+        git add . && git commit -m "updated to latest version of difio-openshift-php" && git push
