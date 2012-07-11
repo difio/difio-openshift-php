@@ -39,7 +39,7 @@ Installing on your OpenShift PHP application
 
         remote: Running .openshift/action_hooks/post_deploy
         remote: 
-        remote: Success, registered/updated application with id 41
+        remote: Success, registered/updated application 416c208c-d212-4580-85fd-8aa207c8e2a1
 
 - That's it, you can now check your application statistics at http://www.dif.io
 
